@@ -208,7 +208,7 @@
       if (mode === "signup") {
         const { error } = await sb.auth.signUp({ email, password });
         if (error) throw error;
-        showMsg("Check your email for the confirmation link \u2014 use the most recent one if you have more than one. Then come back and log in.", "ok");
+        showMsg("Check your email for the confirmation link — use the most recent one if you have more than one. Then come back and log in.", "ok");
         clearFields();
       } else {
         const { error } = await sb.auth.signInWithPassword({ email, password });
@@ -265,7 +265,7 @@
     try {
       const { error } = await sb.auth.updateUser({ password });
       if (error) throw error;
-      msg.innerHTML = `<div class="msg ok">Password updated. Redirecting\u2026</div>`;
+      msg.innerHTML = `<div class="msg ok">Password updated. Redirecting…</div>`;
       setTimeout(() => { window.location.href = window.location.pathname; }, 1200);
     } catch (err) {
       msg.innerHTML = `<div class="msg err">${err.message || "Something went wrong."}</div>`;
